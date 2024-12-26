@@ -40,6 +40,7 @@ Vehicle.Powertrain:
 # Internal combustion engine signals and attributes.
 #
 Vehicle.Powertrain.CombustionEngine:
+  delete: true
   type: branch
   description: Engine-specific data, stopping at the bell housing.
 
@@ -88,6 +89,7 @@ Vehicle.Powertrain.TractionBattery:
 # The fuels system signals and attributes used to host the signals in FuelSystem.vspec.
 #
 Vehicle.Powertrain.FuelSystem:
+  delete: true
   type: branch
   description: Fuel system data.
 
@@ -130,6 +132,15 @@ Vehicle.ADAS:
 
 #include ADAS/ADAS.vspec Vehicle.ADAS
 
+#
+# Advanced Driver Assist Systems signals and attributes.
+#
+Vehicle.ADS:
+  type: branch
+  description: Autonomous Driving System.
+
+#include ADS/ADS.vspec Vehicle.ADS
+
 
 #
 # Chassis signals and attributes.
@@ -146,6 +157,7 @@ Vehicle.Chassis:
 # On-board Diagnostic (OBD) Branch
 #
 Vehicle.OBD:
+  delete: true
   type: branch
   description: OBD data.
 
@@ -158,6 +170,7 @@ Vehicle.OBD:
 # Driver
 #
 Vehicle.Driver:
+  delete: true
   type: branch
   description: Driver data.
 
@@ -171,6 +184,7 @@ Vehicle.Driver:
 #
 
 Vehicle.Occupant:
+  delete: true
   type: branch
   instances:
     - Row[1,2]
@@ -191,6 +205,7 @@ Vehicle.Exterior:
 # Service information
 #
 Vehicle.Service:
+  delete: true
   type: branch
   description: Service data.
 
@@ -200,6 +215,7 @@ Vehicle.Service:
 # Connectivity information
 #
 Vehicle.Connectivity:
+  delete: true
   type: branch
   description: Connectivity data.
 

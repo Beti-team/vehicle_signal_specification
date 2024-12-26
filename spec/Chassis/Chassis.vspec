@@ -7,10 +7,20 @@
 # SPDX-License-Identifier: MPL-2.0
 
 #
+# Safety signal
+#
+
+IsCollisionDetected:
+  datatype: boolean
+  type: actuator
+  description: Collision detector True = Engaged. False = Not Engaged.
+  
+#
 # Chassis signals and attributes
 #
 
 Wheelbase:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -39,6 +49,7 @@ AxleCount:
 #
 
 Axle.TreadWidth:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
@@ -47,6 +58,7 @@ Axle.TreadWidth:
   comment: Corresponds to SAE J1100-2009 W101.
 
 Axle.TrackWidth:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
@@ -55,6 +67,7 @@ Axle.TrackWidth:
   comment: Corresponds to SAE J1100-2009 W102.
 
 Axle.AxleWidth:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
@@ -62,17 +75,20 @@ Axle.AxleWidth:
   comment: Corresponds to SAE J1100-2009 W113.
 
 Axle.WheelCount:
+  delete: true
   datatype: uint8
   type: attribute
   description: Number of wheels on the axle
 
 Axle.WheelDiameter:
+  delete: true
   datatype: float
   type: attribute
   unit: inch
   description: Diameter of wheels (rims without tires), in inches, as per ETRTO / TRA standard.
 
 Axle.WheelWidth:
+  delete: true
   datatype: float
   type: attribute
   unit: inch
@@ -95,18 +111,21 @@ Axle.SteeringAngle:
 # Axle.TireDiameter = Axle.WheelDiameter + ((2 * Axle.TireWidth * Axle.TireAspectRatio) /(100*25.4))
 
 Axle.TireDiameter:
+  delete: true
   datatype: float
   type: attribute
   unit: inch
   description: Outer diameter of tires, in inches, as per ETRTO / TRA standard.
 
 Axle.TireWidth:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
   description: Nominal section width of tires, in mm, as per ETRTO / TRA standard.
 
 Axle.TireAspectRatio:
+  delete: true
   datatype: uint8
   type: attribute
   unit: percent
@@ -189,6 +208,7 @@ Accelerator.PedalPosition:
 # Brake
 #
 Brake:
+  delete: true
   type: branch
   description: Brake system signals
 

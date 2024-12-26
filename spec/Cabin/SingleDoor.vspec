@@ -17,6 +17,7 @@
 # Window description
 #
 Window:
+  delete: true
   type: branch
   description: Door window status. Start position for Window is Closed.
 
@@ -27,6 +28,7 @@ Window:
 #
 
 IsChildLockActive:
+  delete: true
   datatype: boolean
   type: sensor
   description: Is door child lock active. True = Door cannot be opened from inside.
@@ -36,6 +38,7 @@ IsChildLockActive:
 # Window shade / curtain status
 #
 Shade:
+  delete: true
   type: branch
   description: Side window shade. Open = Retracted, Closed = Deployed.
                Start position for Shade is Open/Retracted.

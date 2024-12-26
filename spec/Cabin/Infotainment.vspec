@@ -10,6 +10,7 @@
 # In-Vehicle Infotainment Signals
 #
 Media:
+  delete: true
   type: branch
   description: All Media actions
 
@@ -81,6 +82,7 @@ Media.Volume:
   description: Current Media Volume
 
 Navigation:
+  delete: true
   type: branch
   description: All navigation actions
 
@@ -137,6 +139,7 @@ Navigation.Map.IsAutoScaleModeUsed:
            If false, then manual-scaling mode is used.
 
 HMI:
+  delete: true
   type: branch
   description: HMI related signals
 
@@ -250,6 +253,7 @@ HMI.DisplayOffDuration:
   comment: Display shall be turned off at HMI.LastActionTime + HMI.DisplayOffDuration, unless HMI.IsScreenAlwaysOn==True.
 
 SmartphoneProjection:
+  delete: true
   type: branch
   description: All smartphone projection actions.
   comment: Smartphone projection exposes or controls specific applications on the Smartphone on the vehicle infotainment system.
@@ -292,4 +296,15 @@ SmartphoneScreenMirroring.Source:
   allowed: ['USB', 'BLUETOOTH', 'WIFI']
   description: Connectivity source selected for mirroring.
 
+Intercom:
+  type: branch
+  description: All Intercom actions
+
+Intercom.IsInCommunication:
+  datatype: string
+  type: actuator
+  allowed: ['UNKNOWN', 'READY' ,'CALLING', 'RECEIVING', 'BUSY']
+  description: Is intercom inuse.
+
+#include include/SystemStatus.vspec
 #include include/PowerOptimize.vspec

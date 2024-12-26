@@ -16,6 +16,7 @@
 #
 
 IsConnectivityAvailable:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicates if connectivity between vehicle and cloud is available.

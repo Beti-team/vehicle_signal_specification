@@ -34,6 +34,7 @@ Position:
   comment: Relationship between Open/Close and Start/End position is item dependent.
 
 Switch:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['INACTIVE', 'CLOSE', 'OPEN', 'ONE_SHOT_CLOSE', 'ONE_SHOT_OPEN']

@@ -14,11 +14,13 @@
 # Non-configurable lights
 #
 IsGloveBoxOn:
+  delete: true
   datatype: boolean
   type: actuator
   description: Is glove box light on
 
 IsDomeOn:
+  delete: true
   datatype: boolean
   type: actuator
   description: Is central dome light on
@@ -36,6 +38,7 @@ PerceivedAmbientLight:
 # Configurable lights
 #
 Spotlight:
+  delete: true
   type: branch
   instances:
     - Row[1,4]
@@ -45,6 +48,7 @@ Spotlight:
 
 
 AmbientLight:
+  delete: true
   type: branch
   instances:
     - Row[1,2]
@@ -53,6 +57,7 @@ AmbientLight:
 #include SingleConfigurableLight.vspec AmbientLight
 
 InteractiveLightBar:
+  delete: true
   type: branch
   description: Decorative coloured light bar that supports effects, usually mounted on the dashboard (e.g. BMW i7 Interactive bar).
 #include SingleConfigurableLight.vspec InteractiveLightBar

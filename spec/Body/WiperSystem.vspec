@@ -46,6 +46,7 @@
 
 
 Mode:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['STOP_HOLD', 'WIPE', 'PLANT_MODE', 'EMERGENCY_STOP']
@@ -57,6 +58,7 @@ Mode:
                EMERGENCY_STOP means that wiping shall be immediately stopped without holding the position.
 
 Frequency:
+  delete: true
   datatype: uint8
   unit: cpm
   type: actuator
@@ -67,6 +69,7 @@ Frequency:
   comment:     Examples - 0 = Wipers stopped, 80 = Wipers doing 80 cycles per minute (in WIPE mode).
 
 TargetPosition:
+  delete: true
   datatype: float
   unit: degrees
   type: actuator
@@ -79,6 +82,7 @@ TargetPosition:
   comment:     Default parking position might be used as reference position.
 
 ActualPosition:
+  delete: true
   datatype: float
   unit: degrees
   type: actuator
@@ -87,6 +91,7 @@ ActualPosition:
   comment:     Default parking position might be used as reference position.
 
 DriveCurrent:
+  delete: true
   datatype: float
   unit: A
   type: sensor
@@ -101,6 +106,7 @@ IsWiping:
                directly after the change of direction.
 
 IsEndingWipeCycle:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicates if current wipe movement is completed or near completion.
@@ -116,6 +122,7 @@ IsWiperError:
   description: Indicates system failure. True if wiping is disabled due to system failure.
 
 IsPositionReached:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicates if a requested position has been reached.
@@ -130,6 +137,7 @@ IsBlocked:
   description: Indicates if wiper movement is blocked. True = Movement blocked. False = Movement not blocked.
 
 IsOverheated:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicates if wiper system is overheated.

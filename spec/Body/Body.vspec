@@ -19,6 +19,7 @@ BodyType:
 # Hood description
 #
 Hood:
+  delete: true
   type: branch
   description: Hood status. Start position for Hood is Closed.
   comment: The hood is the hinged cover over the engine compartment of a motor vehicles.
@@ -31,6 +32,7 @@ Hood:
 # Trunk description
 #
 Trunk:
+  delete: true
   type: branch
   instances: ["Front", "Rear"]
   description: Trunk status. Start position for Trunk is Closed.
@@ -59,11 +61,24 @@ Horn.IsActive:
   type: actuator
   description: Horn active or inactive. True = Active. False = Inactive.
 
+#
+# Bell description
+#
+Bell:
+  type: branch
+  description: Bell signals.
+
+Bell.IsActive:
+  datatype: boolean
+  type: actuator
+  description: Bell active or inactive. True = Active. False = Inactive.
+
 
 #
 # Raindetection description
 #
 Raindetection:
+  delete: true
   type: branch
   description: Rain sensor signals.
 
@@ -207,6 +222,7 @@ Lights.Fog:
 #include StaticLights.vspec Lights.Fog
 
 Lights.LicensePlate:
+  delete: true
   type: branch
   description: License plate lights.
 #include StaticLights.vspec Lights.LicensePlate
@@ -231,6 +247,7 @@ Lights.DirectionIndicator:
 #  Mirrors definition
 ##
 Mirrors:
+  delete: true
   type: branch
   instances: ["DriverSide", "PassengerSide"]
   description: All mirrors.
@@ -242,6 +259,7 @@ Mirrors:
 ##
 
 RearMainSpoilerPosition:
+  delete: true
   datatype: float
   unit: percent
   type: actuator

@@ -7,6 +7,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 AccumulatedBrakingEnergy:
+  delete: true
   datatype: float
   type: sensor
   unit: kWh

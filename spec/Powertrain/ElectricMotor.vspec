@@ -16,6 +16,7 @@ EngineCode:
   description: Engine code designation, as specified by vehicle manufacturer.
 
 MaxPower:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -23,6 +24,7 @@ MaxPower:
   description: Peak power, in kilowatts, that motor(s) can generate.
 
 MaxTorque:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -30,6 +32,7 @@ MaxTorque:
   description: Peak power, in newton meter, that the motor(s) can generate.
 
 MaxRegenPower:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -37,6 +40,7 @@ MaxRegenPower:
   description: Peak regen/brake power, in kilowatts, that motor(s) can generate.
 
 MaxRegenTorque:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -47,12 +51,14 @@ MaxRegenTorque:
 # Motor rotations per minute
 #
 Speed:
+  delete: true
   datatype: int32
   type: sensor
   unit: rpm
   description: Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.
 
 TimeInUse:
+  delete: true
   datatype: float
   type: sensor
   description: Accumulated time during engine lifetime when the vehicule state's is 'READY'.
@@ -73,6 +79,7 @@ Temperature:
 # Motor coolant temperature (if applicable)
 #
 CoolantTemperature:
+  delete: true
   deprecation: v5.0 moved to EngineCoolant.Temperature
   datatype: float
   type: sensor
@@ -83,6 +90,7 @@ CoolantTemperature:
 # Engine coolant
 #
 EngineCoolant:
+  delete: true
   type: branch
   description: Signals related to the engine coolant (if applicable).
 #include EngineCoolant.vspec EngineCoolant
@@ -91,6 +99,7 @@ EngineCoolant:
 # Current Power
 #
 Power:
+  delete: true
   datatype: int16
   type: sensor
   unit: kW
@@ -100,6 +109,7 @@ Power:
 # Current Torque
 #
 Torque:
+  delete: true
   datatype: int16
   type: sensor
   unit: Nm

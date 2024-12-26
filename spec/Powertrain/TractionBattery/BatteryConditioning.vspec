@@ -29,6 +29,7 @@
 #    the system will be deactivated.
 
 BatteryConditioning:
+  delete: true
   type: branch
   description: Properties related to preparing the vehicle battery for charging or driving.
 

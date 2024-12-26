@@ -86,51 +86,60 @@ VehicleIdentification.Year:
 # Note: Only a subset of the properties from https://schema.org/Car have been imported.
 
 VehicleIdentification.AcrissCode:
+  delete: true
   datatype: string
   type: attribute
   description: The ACRISS Car Classification Code is a code used by many car rental companies.
 
 VehicleIdentification.BodyType:
+  delete: true
   datatype: string
   type: attribute
   description: Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
 
 VehicleIdentification.DateVehicleFirstRegistered:
+  delete: true
   datatype: string
   type: attribute
   unit: iso8601
   description: The date in ISO 8601 format of the first registration of the vehicle with the respective public authorities.
 
 VehicleIdentification.LicensePlate:
+  delete: true
   datatype: string
   type: attribute
   description: The license plate of the vehicle.
   comment: Depending on the context, this attribute might not be up to date or might be misconfigured, and therefore should be considered untrustworthy in the absence of another method of verification.
 
 VehicleIdentification.MeetsEmissionStandard:
+  delete: true
   datatype: string
   type: attribute
   description: Indicates that the vehicle meets the respective emission standard.
 
 VehicleIdentification.ProductionDate:
+  delete: true
   datatype: string
   type: attribute
   unit: iso8601
   description: The date in ISO 8601 format of production of the item, e.g. vehicle.
 
 VehicleIdentification.PurchaseDate:
+  delete: true
   datatype: string
   type: attribute
   unit: iso8601
   description: The date in ISO 8601 format of the item e.g. vehicle was purchased by the current owner.
 
 VehicleIdentification.VehicleModelDate:
+  delete: true
   datatype: string
   type: attribute
   unit: iso8601
   description: The release date in ISO 8601 format of a vehicle model (often used to differentiate versions of the same make and model).
 
 VehicleIdentification.VehicleConfiguration:
+  delete: true
   datatype: string
   type: attribute
   description: A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
@@ -141,31 +150,37 @@ VehicleIdentification.VehicleSeatingCapacity:
   description: The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.
 
 VehicleIdentification.VehicleSpecialUsage:
+  delete: true
   datatype: string
   type: attribute
   description: Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school.
 
 VehicleIdentification.VehicleExteriorColor:
+  delete: true
   datatype: string
   type: attribute
   description: The main color of the exterior within the basic color palette (eg. red, blue, black, white, ...).
 
 VehicleIdentification.VehicleInteriorColor:
+  delete: true
   datatype: string
   type: attribute
   description: The color or color combination of the interior of the vehicle.
 
 VehicleIdentification.VehicleInteriorType:
+  delete: true
   datatype: string
   type: attribute
   description: The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.).
 
 VehicleIdentification.KnownVehicleDamages:
+  delete: true
   datatype: string
   type: attribute
   description: A textual description of known damages, both repaired and unrepaired.
 
 VehicleIdentification.OptionalExtras:
+  delete: true
   datatype: string[]
   type: attribute
   description: Optional extras refers to all car equipment options that are not installed as standard by the manufacturer.
@@ -175,6 +190,7 @@ VehicleIdentification.OptionalExtras:
 #
 
 LowVoltageSystemState:
+  delete: true
   datatype: string
   type: sensor
   allowed: [
@@ -191,6 +207,7 @@ LowVoltageSystemState:
 #  Low voltage battery
 ##
 LowVoltageBattery:
+  delete: true
   type: branch
   description: Signals related to low voltage battery.
 
@@ -203,6 +220,12 @@ Speed:
   unit: km/h
   description: Vehicle speed.
 
+SpeedLimit:
+  datatype: float
+  type: actuator
+  unit: km/h
+  description: Vehicle speed limitation.
+
 TraveledDistance:
   datatype: float
   type: sensor
@@ -210,6 +233,7 @@ TraveledDistance:
   description: Odometer reading, total distance traveled during the lifetime of the vehicle.
 
 TraveledDistanceSinceStart:
+  delete: true
   datatype: float
   type: sensor
   unit: km
@@ -219,6 +243,7 @@ TraveledDistanceSinceStart:
            The signal may however keep the value of the last trip until a new trip is started.
 
 StartTime:
+  delete: true
   datatype: string
   type: attribute
   default: '0000-01-01T00:00Z'
@@ -230,6 +255,7 @@ StartTime:
            The default value indicates that the vehicle never has been started, or that latest start time is unknown.
 
 TripDuration:
+  delete: true
   datatype: float
   type: sensor
   unit: s
@@ -240,6 +266,7 @@ TripDuration:
            A trip is considered to end when engine is no longer enabled.
 
 TripMeterReading:
+  delete: true
   datatype: float
   type: actuator
   unit: km
@@ -261,6 +288,7 @@ IsMoving:
   description: Indicates whether the vehicle is stationary or moving.
 
 AverageSpeed:
+  delete: true
   datatype: float
   type: sensor
   unit: km/h
@@ -290,6 +318,7 @@ Acceleration.Lateral:
   description: Vehicle acceleration in Y (lateral acceleration).
 
 Acceleration.Vertical:
+  delete: true
   datatype: float
   type: sensor
   unit: m/s^2
@@ -326,12 +355,14 @@ AngularVelocity.Yaw:
 #
 
 RoofLoad:
+  delete: true
   datatype: int16
   type: attribute
   unit: kg
   description: The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.
 
 CargoVolume:
+  delete: true
   datatype: float
   type: attribute
   unit: l
@@ -339,6 +370,7 @@ CargoVolume:
   min: 0
 
 EmissionsCO2:
+  delete: true
   datatype: int16
   type: attribute
   description: The CO2 emissions.
@@ -355,7 +387,14 @@ CurrentOverallWeight:
   unit: kg
   description: Current overall Vehicle weight. Including passengers, cargo and other load inside the car.
 
+MaxOverallWeight:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: Max overall Vehicle weight. Including passengers, cargo and other load inside the car.
+
 CurbWeight:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -363,6 +402,7 @@ CurbWeight:
   description: Vehicle curb weight, including all liquids and full tank of fuel, but no cargo or passengers.
 
 GrossWeight:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -370,6 +410,7 @@ GrossWeight:
   description: Curb weight of vehicle, including all liquids and full tank of fuel and full load of cargo and passengers.
 
 MaxTowWeight:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -377,6 +418,7 @@ MaxTowWeight:
   description: Maximum weight of trailer.
 
 MaxTowBallWeight:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -398,6 +440,7 @@ Height:
   description: Overall vehicle height.
 
 WidthExcludingMirrors:
+  delete: true
   datatype: uint16
   type: attribute
   default: 0
@@ -405,12 +448,14 @@ WidthExcludingMirrors:
   description: Overall vehicle width excluding mirrors, as defined by SAE J1100-2009 W103.
 
 WidthIncludingMirrors:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
   description: Overall vehicle width including mirrors, as defined by SAE J1100-2009 W144.
 
 WidthFoldedMirrors:
+  delete: true
   datatype: uint16
   type: attribute
   unit: mm
@@ -426,6 +471,7 @@ TurningDiameter:
 # Trailer
 #
 Trailer:
+  delete: true
   type: branch
   description: Trailer signals.
 
@@ -492,6 +538,7 @@ CurrentLocation.VerticalAccuracy:
   description: Accuracy of altitude.
 
 CurrentLocation.GNSSReceiver:
+  delete: true
   type: branch
   description: Information on the GNSS receiver used for determining current location.
 
@@ -538,5 +585,19 @@ CurrentLocation.GNSSReceiver.MountingPosition.Z:
   description: Mounting position of GNSS receiver on Z-axis.
                Axis definitions according to ISO 8855. Origin at center of (first) rear axle.
                Positive values = above center of rear axle. Negative values = below center of rear axle.
+
+Robotisation:
+  type: branch
+  description: Robotisation
+
+#include include/SystemStatus.vspec Robotisation
+
+SafetyHardwares:
+  type: branch
+  description: SafetyHardwares
+
+#include include/SystemStatus.vspec SafetyHardwares
+
+#include include/SystemStatus.vspec
 
 #include include/PowerOptimize.vspec

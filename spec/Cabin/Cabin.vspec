@@ -14,6 +14,7 @@
 # Rear window shade signals
 ##
 RearShade:
+  delete: true
   type: branch
   description: Rear window shade. Open = Retracted, Closed = Deployed.
                Start position for RearShade is Open/Retracted.
@@ -43,6 +44,7 @@ Infotainment:
 # Sunroof status
 ##
 Sunroof:
+  delete: true
   type: branch
   description: Sun roof status.
 
@@ -75,6 +77,7 @@ Sunroof.Shade:
 # Rear-view mirror signals
 #
 RearviewMirror:
+  delete: true
   type: branch
   description: Rear-view mirror.
 
@@ -110,14 +113,15 @@ Light:
 ##
 Door:
   type: branch
-  instances:
-    - Row[1,2]
-    - ["DriverSide","PassengerSide"]
+  # instances:
+  #   - Row[1,2]
+  #   - ["DriverSide","PassengerSide"]
   description: All doors, including windows and switches.
 #include SingleDoor.vspec Door
 
 # Default value based on instance declaration above with 2 rows and 2 doors in each row.
 DoorCount:
+  delete: true
   datatype: uint8
   type: attribute
   default: 4
@@ -125,6 +129,7 @@ DoorCount:
 
 
 IsWindowChildLockEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Is window child lock engaged. True = Engaged. False = Disengaged.
@@ -143,6 +148,7 @@ IsWindowChildLockEngaged:
 ##
 
 Seat:
+  delete: true
   type: branch
   instances:
     - Row[1,2]
@@ -154,6 +160,7 @@ Seat:
 # Seat attributes.
 #
 DriverPosition:
+  delete: true
   datatype: string
   type: attribute
   allowed: ['LEFT', 'MIDDLE', 'RIGHT']
@@ -161,6 +168,7 @@ DriverPosition:
   comment: Some signals use DriverSide and PassengerSide as instances. If this signal specifies that DriverPosition is LEFT or MIDDLE, then DriverSide refers to left side and PassengerSide to right side. If this signal specifies that DriverPosition is RIGHT, then DriverSide refers to right side and PassengerSide to left side.
 
 SeatRowCount:
+  delete: true
   datatype: uint8
   type: attribute
   default: 2
@@ -169,6 +177,7 @@ SeatRowCount:
 
 
 SeatPosCount:
+  delete: true
   datatype: uint8[]
   type: attribute
   default: [2, 3]
@@ -179,6 +188,7 @@ SeatPosCount:
 # Convertible roof status
 ##
 Convertible:
+  delete: true
   type: branch
   description: Convertible roof.
 
@@ -189,3 +199,12 @@ Convertible.Status:
   description: Roof status on convertible vehicles.
 
 #include include/PowerOptimize.vspec
+
+Safety:
+  type: branch
+  description: Cabin Safety modules.
+
+Safety.IsSmokeDetected:
+  datatype: boolean
+  type: sensor
+  description: Is there smoke on cabin ?

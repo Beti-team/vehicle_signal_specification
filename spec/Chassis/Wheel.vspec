@@ -10,6 +10,7 @@
 # Brake
 #
 Brake:
+  delete: true
   type: branch
   description: Brake signals for wheel
 
@@ -46,6 +47,7 @@ Tire:
   description: Tire signals for wheel.
 
 Tire.Pressure:
+  delete: true
   datatype: uint16
   type: sensor
   unit: kPa
@@ -57,6 +59,7 @@ Tire.IsPressureLow:
   description: Tire Pressure Status. True = Low tire pressure. False = Good tire pressure.
 
 Tire.Temperature:
+  delete: true
   datatype: float
   type: sensor
   unit: celsius
@@ -68,12 +71,14 @@ Tire.Temperature:
 #
 
 Speed:
+  delete: true
   datatype: float
   type: sensor
   unit: km/h
   description: Linear speed of a vehicle's wheel.
 
 AngularSpeed:
+  delete: true
   datatype: float
   type: sensor
   unit: degrees/s

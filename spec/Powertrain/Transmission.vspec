@@ -22,12 +22,14 @@ Type:
 
 
 GearCount:
+  delete: true
   datatype: int8
   type: attribute
   default: 0
   description: Number of forward gears in the transmission. -1 = CVT.
 
 DriveType:
+  delete: true
   datatype: string
   type: attribute
   allowed: ['UNKNOWN', 'FORWARD_WHEEL_DRIVE', 'REAR_WHEEL_DRIVE', 'ALL_WHEEL_DRIVE']
@@ -45,6 +47,7 @@ DriveType:
 # distance travelled in previous vehicles.
 #
 TravelledDistance:
+  delete: true
   datatype: float
   type: sensor
   unit: km
@@ -62,6 +65,7 @@ CurrentGear:
 # Selected gear
 #
 SelectedGear:
+  delete: true
   datatype: int8
   type: actuator
   description: The selected gear. 0=Neutral, 1/2/..=Forward, -1/-2/..=Reverse, 126=Park, 127=Drive.
@@ -72,6 +76,7 @@ IsParkLockEngaged:
   description: Is the transmission park lock engaged or not. False = Disengaged. True = Engaged.
 
 IsLowRangeEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Is gearbox in low range mode or not. False = Normal/High range engaged. True = Low range engaged.
@@ -79,6 +84,7 @@ IsLowRangeEngaged:
            in heavy vehicles and off-road vehicles.
 
 IsElectricalPowertrainEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Is electrical powertrain mechanically connected/engaged to the drivetrain or not.
@@ -90,6 +96,7 @@ IsElectricalPowertrainEngaged:
 # Current mode
 #
 PerformanceMode:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['NORMAL', 'SPORT', 'ECONOMY', 'SNOW', 'RAIN']
@@ -100,6 +107,7 @@ PerformanceMode:
 # Current gearchange mode
 #
 GearChangeMode:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['MANUAL', 'AUTOMATIC']
@@ -110,6 +118,7 @@ GearChangeMode:
 # Gearbox temperature
 #
 Temperature:
+  delete: true
   datatype: float
   type: sensor
   unit: celsius
@@ -120,6 +129,7 @@ Temperature:
 # Clutch
 #
 ClutchEngagement:
+  delete: true
   datatype: float
   type: actuator
   unit: percent
@@ -128,6 +138,7 @@ ClutchEngagement:
   description: Clutch engagement. 0% = Clutch fully disengaged. 100% = Clutch fully engaged.
 
 ClutchWear:
+  delete: true
   datatype: uint8
   type: sensor
   unit: percent
@@ -135,6 +146,7 @@ ClutchWear:
   description: Clutch wear as a percent. 0 = no wear. 100 = worn.
 
 DiffLockFrontEngagement:
+  delete: true
   datatype: float
   type: actuator
   unit: percent
@@ -143,6 +155,7 @@ DiffLockFrontEngagement:
   description: Front Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.
 
 DiffLockRearEngagement:
+  delete: true
   datatype: float
   type: actuator
   unit: percent
@@ -151,6 +164,7 @@ DiffLockRearEngagement:
   description: Rear Diff Lock engagement. 0% = Diff lock fully disengaged. 100% = Diff lock fully engaged.
 
 TorqueDistribution:
+  delete: true
   datatype: float
   type: actuator
   unit: percent

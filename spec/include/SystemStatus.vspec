@@ -1,0 +1,5 @@
+SystemStatus:
+  datatype: string
+  type: actuator
+  allowed: ['UNKNOWN', 'DEFECT', 'WARNING', 'OPERATIONAL']
+  description: SubSystem Status

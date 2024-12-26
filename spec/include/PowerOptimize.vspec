@@ -100,6 +100,7 @@
 
 
 PowerOptimizeLevel:
+  delete: true
   datatype: uint8
   type: actuator
   min: 0
@@ -110,6 +111,7 @@ PowerOptimizeLevel:
                Level 10 indicates most aggressive power optimization mode, only essential functionality enabled.
 
 IsAutoPowerOptimize:
+  delete: true
   datatype: boolean
   type: actuator
   description: Auto Power Optimization Flag When set to 'true',

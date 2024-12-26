@@ -17,6 +17,7 @@ IsLightOn:
   description: Indicates whether the light is turned on. True = On, False = Off.
 
 Intensity:
+  delete: true
   type: actuator
   datatype: uint8
   unit: percent

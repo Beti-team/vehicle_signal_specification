@@ -60,6 +60,7 @@ SupportedAutonomyLevel:
   description: Indicates the highest level of driving automation according to the SAE J3016 taxonomy the vehicle is capable of.
 
 CruiseControl:
+  delete: true
   type: branch
   description: Signals from Cruise Control system.
 
@@ -107,6 +108,7 @@ CruiseControl.AdaptiveIntervalSet:
 # Lane Departure Detection System
 #
 LaneDepartureDetection:
+  delete: true
   type: branch
   description: Signals from Lane Departure Detection System.
 
@@ -129,6 +131,7 @@ LaneDepartureDetection.IsError:
 # Obstacle Sensor System
 #
 ObstacleDetection:
+  delete: true
   type: branch
   instances:
     - ["Front", "Rear"]
@@ -179,6 +182,7 @@ ObstacleDetection.WarningType:
 # Antilock Braking System
 #
 ABS:
+  delete: true
   type: branch
   description: Antilock Braking System signals.
 
@@ -202,6 +206,7 @@ ABS.IsEngaged:
 # Traction Control System
 #
 TCS:
+  delete: true
   type: branch
   description: Traction Control System signals.
 
@@ -225,6 +230,7 @@ TCS.IsEngaged:
 # Electronic Stability Control System
 #
 ESC:
+  delete: true
   type: branch
   description: Electronic Stability Control System signals.
 
@@ -287,6 +293,7 @@ ESC.RoadFriction.UpperBound:
 # Electronic Brakeforce Distribution (EBD)
 #
 EBD:
+  delete: true
   type: branch
   description: Electronic Brakeforce Distribution (EBD) System signals.
 
@@ -310,6 +317,7 @@ EBD.IsEngaged:
 # Emergency Brake Assist (EBA)
 #
 EBA:
+  delete: true
   type: branch
   description: Emergency Brake Assist (EBA) System signals.
 
@@ -332,6 +340,7 @@ EBA.IsEngaged:
 # Driver Monitoring System (DMS)
 #
 DMS:
+  delete: true
   type: branch
   description: Driver Monitoring System signals.
 

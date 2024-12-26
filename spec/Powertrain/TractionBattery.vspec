@@ -12,6 +12,7 @@
 #
 
 Id:
+  delete: true
   datatype: string
   type: attribute
   description: Battery Identification Number as assigned by OEM.
@@ -19,12 +20,14 @@ Id:
            or any other identifier that the OEM want to use to uniquely identify the battery individual.
 
 ProductionDate:
+  delete: true
   datatype: string
   type: attribute
   unit: iso8601
   description: Production date of battery in ISO8601 format, e.g. YYYY-MM-DD.
 
 ErrorCodes:
+  delete: true
   datatype: string[]
   type: sensor
   description: Current error codes related to the battery, if any.
@@ -32,6 +35,7 @@ ErrorCodes:
                standard ([P|C|B|U]XXXXX ) or any other format.
 
 IsPowerConnected:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicating if the power (positive terminator) of the traction battery is connected to the powertrain.
@@ -39,6 +43,7 @@ IsPowerConnected:
            This is achieved by connectors, typically one for plus and one for minus.
 
 IsGroundConnected:
+  delete: true
   datatype: boolean
   type: sensor
   description: Indicating if the ground (negative terminator) of the traction battery is connected to the powertrain.
@@ -68,12 +73,14 @@ Temperature.Max:
   description: Current maximum temperature of the battery cells, i.e. temperature of the hottest cell.
 
 Temperature.CellTemperature:
+  delete: true
   datatype: float[]
   type: sensor
   description: Array of cell temperatures. Length or array shall correspond to number of cells in vehicle.
   comment: Cells are identified by relative position in array.
 
 CellVoltage:
+  delete: true
   type: branch
   description: Voltage information for cells in the battery pack.
 
@@ -108,18 +115,21 @@ CellVoltage.CellVoltages:
   comment: Cells are identified by relative position in array.
 
 GrossCapacity:
+  delete: true
   datatype: uint16
   type: attribute
   unit: kWh
   description: Gross capacity of the battery.
 
 NetCapacity:
+  delete: true
   datatype: uint16
   type: sensor
   unit: kWh
   description: Total net capacity of the battery considering aging.
 
 StateOfHealth:
+  delete: true
   datatype: float
   type: sensor
   unit: percent
@@ -143,6 +153,7 @@ StateOfCharge.Current:
                This is not necessarily the state of charge being displayed to the customer.
 
 StateOfCharge.Displayed:
+  delete: true
   type: sensor
   datatype: float
   unit: percent
@@ -151,6 +162,7 @@ StateOfCharge.Displayed:
   description: State of charge displayed to the customer.
 
 StateOfCharge.CurrentEnergy:
+  delete: true
   type: sensor
   datatype: float
   unit: kWh
@@ -158,6 +170,7 @@ StateOfCharge.CurrentEnergy:
   comment: Current energy could be calculated as .StateOfCharge.Current * .NetCapacity.
 
 NominalVoltage:
+  delete: true
   datatype: uint16
   type: attribute
   unit: V
@@ -165,18 +178,21 @@ NominalVoltage:
   comment: Nominal voltage typically refers to voltage of fully charged battery when delivering rated capacity.
 
 MaxVoltage:
+  delete: true
   datatype: uint16
   type: attribute
   unit: V
   description: Max allowed voltage of the battery, e.g. during charging.
 
 CurrentVoltage:
+  delete: true
   datatype: float
   type: sensor
   unit: V
   description: Current Voltage of the battery.
 
 CurrentCurrent:
+  delete: true
   datatype: float
   type: sensor
   unit: A
@@ -184,6 +200,7 @@ CurrentCurrent:
                Negative = Current flowing out of battery, e.g. during driving.
 
 CurrentPower:
+  delete: true
   datatype: float
   type: sensor
   unit: W
@@ -191,36 +208,42 @@ CurrentPower:
                Negative = Energy flowing out of battery, e.g. during driving.
 
 AccumulatedChargedEnergy:
+  delete: true
   datatype: float
   type: sensor
   unit: kWh
   description: The accumulated energy delivered to the battery during charging over lifetime of the battery.
 
 AccumulatedConsumedEnergy:
+  delete: true
   datatype: float
   type: sensor
   unit: kWh
   description: The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.
 
 AccumulatedChargedThroughput:
+  delete: true
   datatype: float
   type: sensor
   unit: Ah
   description: The accumulated charge throughput delivered to the battery during charging over lifetime of the battery.
 
 AccumulatedConsumedThroughput:
+  delete: true
   datatype: float
   type: sensor
   unit: Ah
   description: The accumulated charge throughput leaving HV battery for propulsion and auxiliary loads over lifetime of the battery.
 
 PowerLoss:
+  delete: true
   datatype: float
   type: sensor
   unit: W
   description: Electrical energy lost by power dissipation to heat inside the battery.
 
 Range:
+  delete: true
   datatype: uint32
   type: sensor
   unit: m
@@ -239,7 +262,8 @@ Charging:
 Charging.ChargingPort:
   type: branch
   instances:
-    - ["FrontLeft", "FrontMiddle", "FrontRight", "RearLeft", "RearMiddle", "RearRight", "AnyPosition"]
+    # - ["FrontLeft", "FrontMiddle", "FrontRight", "RearLeft", "RearMiddle", "RearRight", "AnyPosition"]
+    - ["AnyPosition"]
   description: Properties related to a particular charging port available in the vehicle.
   comment: If a vehicle has a single charging port, then use the instance AnyPosition.
 
@@ -294,6 +318,7 @@ Charging.ChargingPort.IsChargingCableLocked:
   comment: Locking of charging cable can be used to prevent unintentional removing during charging.
 
 Charging.ChargeLimit:
+  delete: true
   datatype: uint8
   type: actuator
   min: 0
@@ -303,6 +328,7 @@ Charging.ChargeLimit:
   description: Target charge limit (state of charge) for battery.
 
 Charging.MaximumChargingCurrent:
+  delete: true
   type: branch
   description: Maximum charging current that can be accepted by the system, as measured at the charging inlet.
 
@@ -337,18 +363,21 @@ Charging.IsCharging:
                Charging is considered to be ongoing if energy is flowing from charger to vehicle.
 
 Charging.IsDischarging:
+  delete: true
   datatype: boolean
   type: sensor
   description: True if discharging (vehicle to grid) is ongoing.
                Discharging is considered to be ongoing if energy is flowing from vehicle to charger/grid.
 
 Charging.StartStopCharging:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['START', 'STOP']
   description: Start or stop the charging process.
 
 Charging.ChargeCurrent:
+  delete: true
   type: branch
   description: Current charging current.
 
@@ -377,6 +406,7 @@ Charging.ChargeCurrent.Phase3:
   description: Current AC charging current (rms) at inlet for Phase 3. Negative if returning energy to grid.
 
 Charging.ChargeVoltage:
+  delete: true
   type: branch
   description: Current charging voltage, as measured at the charging inlet.
 
@@ -405,24 +435,28 @@ Charging.ChargeVoltage.Phase3:
   description: Current AC charging voltage (rms) at inlet for Phase 3.
 
 Charging.AveragePower:
+  delete: true
   datatype: float
   type: sensor
   unit: kW
   description: Average charging power of last or current charging event.
 
 Charging.MaxPower:
+  delete: true
   datatype: float
   type: sensor
   unit: kW
   description: Maximum charging power of last or current charging event.
 
 Charging.EvseId:
+  delete: true
   datatype: string
   type: sensor
   description: EVSE charging point ID (without separators) of last or current charging event according to ISO 15118-2 Annex H.
   comment: Length of id between 7 and 37 characters. ZZ00000 to be used if SECC cannot provide id
 
 Charging.Location:
+  delete: true
   type: branch
   description: Location of last or current charging event.
   comment: This may depending on implementation represent the location of (the charge port of) the vehicle during charging,
@@ -451,12 +485,14 @@ Charging.Location.Altitude:
   description: Altitude relative to WGS 84 reference ellipsoid of last or current charging event.
 
 Charging.PowerLoss:
+  delete: true
   datatype: float
   type: sensor
   unit: W
   description: Electrical energy lost by power dissipation to heat inside the AC/DC converter.
 
 Charging.Temperature:
+  delete: true
   datatype: float
   type: sensor
   unit: celsius
@@ -479,6 +515,7 @@ Charging.TimeToComplete:
            then Charging.TimeToComplete shall report 5 hours.
 
 Charging.Timer:
+  delete: true
   type: branch
   description: Properties related to timing of battery charging sessions.
 
@@ -501,6 +538,7 @@ Charging.Timer.Time:
                Value has no significance if Charging.Timer.Mode is 'inactive'.
 
 DCDC:
+  delete: true
   type: branch
   description: Properties related to DC/DC converter converting high voltage (from high voltage battery)
                to vehicle low voltage (supply voltage, typically 12 Volts).
@@ -518,5 +556,6 @@ DCDC.Temperature:
   description: Current temperature of DC/DC converter converting battery high voltage
                to vehicle low voltage (typically 12 Volts).
 
+#include include/SystemStatus.vspec
 
 #include TractionBattery/BatteryConditioning.vspec

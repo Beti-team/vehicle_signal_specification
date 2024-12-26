@@ -25,6 +25,7 @@ Temperature:
   description: Temperature
 
 AirDistribution:
+  delete: true
   datatype: string
   type: actuator
   allowed: ['UP', 'MIDDLE', 'DOWN']

@@ -13,6 +13,7 @@ AirTemperature:
   description: Air temperature outside the vehicle.
 
 Humidity:
+  delete: true
   datatype: float
   type: sensor
   unit: percent
@@ -22,6 +23,7 @@ Humidity:
                0 = Dry, 100 = Air fully saturated.
 
 LightIntensity:
+  delete: true
   datatype: float
   type: sensor
   unit: percent

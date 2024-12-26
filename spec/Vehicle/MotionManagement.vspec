@@ -13,6 +13,7 @@
 # Please see vehicle_motion_management.md in documentation for more information
 
 MotionManagement:
+  delete: true
   type: branch
   description: Motion Management Information.
 
