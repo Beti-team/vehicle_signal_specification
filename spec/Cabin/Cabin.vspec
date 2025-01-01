@@ -119,6 +119,14 @@ Door:
   description: All doors, including windows and switches.
 #include SingleDoor.vspec Door
 
+Ramp:
+  type: branch
+  # instances:
+  #   - Row[1,2]
+  #   - ["DriverSide","PassengerSide"]
+  description: All ramps, including windows and switches.
+#include SingleDoor.vspec Ramp
+
 # Default value based on instance declaration above with 2 rows and 2 doors in each row.
 DoorCount:
   delete: true

@@ -489,10 +489,10 @@ CurrentLocation:
   description: The current latitude and longitude of the vehicle.
 
 CurrentLocation.Timestamp:
-  datatype: string
+  datatype: int64
   type: sensor
-  unit: iso8601
-  description: Timestamp from GNSS system for current location, formatted according to ISO 8601 with UTC time zone.
+  unit: unix-time
+  description: Timestamp from GNSS system for current location, formatted according to unix epoch ts
 
 CurrentLocation.Latitude:
   datatype: double
