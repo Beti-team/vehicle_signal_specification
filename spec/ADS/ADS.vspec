@@ -22,7 +22,60 @@ Version:
   type: attribute
   description: Ad Version
 
-MissionId:
+Status:
   datatype: string
   type: attribute
-  description: Current Mission Id
+  default: 'IDLE'
+  allowed: ['IDLE', 'READY', 'DEGRADED']
+  description: Vehicle status
+
+Journey:
+  type: branch
+  description: Course attributes
+
+Journey.CourseId:
+  datatype: string
+  type: attribute
+  description: Course identifier
+
+Journey.Progress:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  max: 100
+  description: Terminus progress
+
+Journey.Eta:
+  datatype: uint8
+  type: sensor
+  unit: s
+  description: Terminus ETA
+
+Journey.CurrentQuay:
+  type: branch
+  description: CurrentQuay waypoint attributes
+
+Journey.CurrentQuay.Id:
+  datatype: string
+  type: attribute
+  description: Current quay Identifier
+
+Journey.CurrentQuay.Eta:
+  datatype: uint8
+  type: sensor
+  unit: s
+  description: Current quay ETA
+
+Journey.CurrentQuay.Progress:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  max: 100
+  description: Current quay progress
+
+Journey.CurrentQuay.Status:
+  datatype: string
+  type: attribute
+  default: 'NA'
+  allowed: ['NA', 'DOING', '  ']
+  description: Vehicle status
