@@ -79,3 +79,10 @@ Journey.CurrentStop.Status:
   default: 'NA'
   allowed: ['NA', 'DOING', 'DONE']
   description: Vehicle status
+
+Journey.CurrentStop.ServiceType:
+  datatype: string
+  type: attribute
+  default: 'NA'
+  allowed: ['NA', 'COMMERCIAL', 'SERVICE', 'TEST']
+  description: Vehicle service type
