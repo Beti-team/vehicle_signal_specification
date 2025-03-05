@@ -156,13 +156,17 @@ IsWindowChildLockEngaged:
 ##
 
 Seat:
-  delete: true
   type: branch
-  instances:
-    - Row[1,2]
-    - ["DriverSide","Middle","PassengerSide"]
+  # instances:
+  #  - Row[1,2]
+  #  - ["DriverSide","Middle","PassengerSide"]
   description: All seats.
-#include Seat.vspec Seat
+# #include Seat.vspec Seat
+
+Seat.AreAllSeatBeltsFasten:
+  datatype: boolean
+  type: sensor
+  description: Are Seatbels all fasten ?
 
 #
 # Seat attributes.
