@@ -154,45 +154,55 @@ IsWindowChildLockEngaged:
 #
 # Which seats that actually exist can be defined by SeatPosCount
 ##
-
 Seat:
   type: branch
-  # instances:
-  #  - Row[1,2]
-  #  - ["DriverSide","Middle","PassengerSide"]
   description: All seats.
-# #include Seat.vspec Seat
 
-Seat.AreAllSeatBeltsFasten:
-  datatype: boolean
-  type: sensor
-  description: Are Seatbels all fasten ?
+Seat.Row1:
+  type: branch
+  instances:
+    - Position[1,2]
+  description: All seats.
+#include Seat.vspec Seat.Row1
+
+Seat.Row2:
+  type: branch
+  instances:
+    - Position[1,2]
+  description: All seats.
+#include Seat.vspec Seat.Row2
+
+Seat.Row3:
+  type: branch
+  instances:
+    - Position[1,4]
+  description: All seats.
+#include Seat.vspec Seat.Row3
 
 #
 # Seat attributes.
 #
-DriverPosition:
-  delete: true
-  datatype: string
-  type: attribute
-  allowed: ['LEFT', 'MIDDLE', 'RIGHT']
-  description: The position of the driver seat in row 1.
-  comment: Some signals use DriverSide and PassengerSide as instances. If this signal specifies that DriverPosition is LEFT or MIDDLE, then DriverSide refers to left side and PassengerSide to right side. If this signal specifies that DriverPosition is RIGHT, then DriverSide refers to right side and PassengerSide to left side.
+# DriverPosition:
+#   datatype: string
+#   type: attribute
+#   allowed: ['LEFT', 'MIDDLE', 'RIGHT']
+#   description: The position of the driver seat in row 1.
+#   comment: Some signals use DriverSide and PassengerSide as instances. If this signal specifies that DriverPosition is LEFT or MIDDLE, then DriverSide refers to left side and PassengerSide to right side. If this signal specifies that DriverPosition is RIGHT, then DriverSide refers to right side and PassengerSide to left side.
 
 SeatRowCount:
-  delete: true
+  # delete: true
   datatype: uint8
   type: attribute
-  default: 2
+  default: 3
   description: Number of seat rows in vehicle.
   comment: Default value corresponds to two rows of seats.
 
 
 SeatPosCount:
-  delete: true
+  # delete: true
   datatype: uint8[]
   type: attribute
-  default: [2, 3]
+  default: [2, 2, 4]
   description: Number of seats across each row from the front to the rear.
   comment: Default value corresponds to two seats in front row and 3 seats in second row.
 
@@ -220,3 +230,8 @@ Safety.IsSmokeDetected:
   datatype: boolean
   type: sensor
   description: Is there smoke on cabin ?
+
+Safety.AreAllSeatBeltsFasten:
+  datatype: boolean
+  type: sensor
+  description: Are Seatbels all fasten ?

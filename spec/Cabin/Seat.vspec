@@ -29,6 +29,7 @@ IsOccupied:
   description: Does the seat have a passenger in it.
 
 Occupant:
+  delete: true
   deprecation: v5.0 - use data from Vehicle.Occupant.
   type: branch
   description: Occupant data.
@@ -44,6 +45,7 @@ IsBelted:
   description: Is the belt engaged.
 
 SeatBeltHeight:
+  delete: true
   datatype: uint16
   type: actuator
   unit: mm
@@ -51,18 +53,10 @@ SeatBeltHeight:
                Position is relative within available movable range of the seat belt.
                0 = Lowermost position supported.
 
-#include include/ItemHeatingCooling.vspec
+# #include include/ItemHeatingCooling.vspec
 
 Massage:
-  datatype: uint8
-  type: actuator
-  min: 0
-  max: 100
-  unit: percent
-  description: Seat massage level. 0 = off. 100 = max massage.
-  deprecation: v5.0 - refactored to Seat.MassageLevel
-
-MassageLevel:
+  delete: true
   datatype: uint8
   type: actuator
   min: 0
@@ -71,6 +65,7 @@ MassageLevel:
   description: Seat massage level. 0 = off. 100 = max massage.
 
 Position:
+  delete: true
   datatype: uint16
   type: actuator
   min: 0
@@ -79,6 +74,7 @@ Position:
                0 = Frontmost position supported.
 
 Height:
+  delete: true
   datatype: uint16
   type: actuator
   min: 0
@@ -87,6 +83,7 @@ Height:
                0 = Lowermost position supported.
 
 Tilt:
+  delete: true
   datatype: float
   type: actuator
   unit: degrees
@@ -98,6 +95,7 @@ Tilt:
 
 
 Backrest:
+  delete: true
   type: branch
   description: Describes signals related to the backrest of the seat.
 
@@ -176,6 +174,7 @@ Backrest.SideBolsterSupport:
                100 = Maximum support.
 
 Seating:
+  delete: true
   type: branch
   description: Describes signals related to the seat bottom of the seat.
   comment: Seating is here considered as the part of the seat that supports the thighs.
@@ -190,6 +189,7 @@ Seating.Length:
                (Shortest length of seating).
 
 Headrest:
+  delete: true
   type: branch
   description: Headrest settings.
 
@@ -208,6 +208,7 @@ Headrest.Angle:
                Positive degrees = tilted forward.
 
 Airbag:
+  delete: true
   type: branch
   description: Airbag signals.
 
@@ -220,6 +221,7 @@ Airbag.IsDeployed:
 #---------------------- SWITCHES ----------------------
 
 Switch:
+  delete: true
   type: branch
   description: Seat switch signals
   deprecation: v5.0 - nested properties moved to Seat.<Property>.
@@ -231,6 +233,7 @@ Switch.IsWarmerEngaged:
   deprecation: v5.0 - refactored to Seat.IsWarmerSwitchEngaged
 
 IsWarmerSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Warmer switch for Seat heater.
@@ -243,6 +246,7 @@ Switch.IsCoolerEngaged:
   deprecation: v5.0 - refactored to Seat.IsCoolerSwitchEngaged
 
 IsCoolerSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Cooler switch for Seat heater.
@@ -255,6 +259,7 @@ Switch.IsForwardEngaged:
   deprecation: v5.0 - refactored to Seat.IsForwardSwitchEngaged
 
 IsForwardSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Seat forward switch engaged.
@@ -267,6 +272,7 @@ Switch.IsBackwardEngaged:
   deprecation: v5.0 - refactored to Seat.IsBackwardSwitchEngaged
 
 IsBackwardSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Seat backward switch engaged.
@@ -279,6 +285,7 @@ Switch.IsUpEngaged:
   deprecation: v5.0 - refactored to Seat.IsUpSwitchEngaged
 
 IsUpSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Seat up switch engaged.
@@ -291,6 +298,7 @@ Switch.IsDownEngaged:
   deprecation: v5.0 - refactored to Seat.IsDownSwitchEngaged
 
 IsDownSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Seat down switch engaged.
@@ -304,6 +312,7 @@ Switch.IsTiltForwardEngaged:
   deprecation: v5.0 - refactored to Seat.IsTiltForwardSwitchEngaged
 
 IsTiltForwardSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Tilt forward switch engaged.
@@ -316,6 +325,7 @@ Switch.IsTiltBackwardEngaged:
   deprecation: v5.0 - refactored to Seat.IsTiltBackwardSwitchEngaged
 
 IsTiltBackwardSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Tilt backward switch engaged.
@@ -525,6 +535,7 @@ Switch.Massage.IsIncreaseEngaged:
   deprecation: v5.0 - refactored to Seat.IsIncreaseMassageLevelSwitchEngaged
 
 IsIncreaseMassageLevelSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Increase massage level switch engaged.
@@ -537,6 +548,7 @@ Switch.Massage.IsDecreaseEngaged:
   deprecation: v5.0 - refactored to Seat.IsDecreaseMassageLevelSwitchEngaged
 
 IsDecreaseMassageLevelSwitchEngaged:
+  delete: true
   datatype: boolean
   type: actuator
   description: Decrease massage level switch engaged.
